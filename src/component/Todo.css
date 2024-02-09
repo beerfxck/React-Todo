@@ -1,0 +1,32 @@
+.todo-box {
+  border: 2px;
+  margin-bottom: 10px;
+}
+
+.todo {
+  margin-bottom: 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  width: 450px;
+  height: 30px;
+}
+
+.completed {
+  background-color: lightgreen;
+}
+
+.todo-text {
+  margin-left: 5px;
+}
+
+.todo-updatedAt {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.remove-button {
+  margin-left: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
