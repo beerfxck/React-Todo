@@ -6,6 +6,7 @@
 .todo {
   margin-bottom: 10px;
   border: 1px solid black;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   width: 470px;

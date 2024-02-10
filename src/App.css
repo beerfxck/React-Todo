@@ -1,31 +1,44 @@
-html, body {
+html {
   height: 100%;
   margin: 0;
   display: flex;
   justify-content: center;
 }
 
-.box {
-  margin-top: 100px;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 600px;
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./image/mountain.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Arial", sans-serif;
 }
 
 .app {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
   text-align: center;
 }
 
-.input{
+.input {
   height: 30px;
   width: 200px;
-  border-radius: 10px;
+  border-radius: 6px;
+  padding-left: 10px;
 }
 
 .add-todo {
   margin-bottom: 20px;
+  border-color: beige;
 }
 
 .todos {
@@ -39,10 +52,9 @@ html, body {
   background-color: aqua;
   width: 60px;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
-
 
 @media (max-width: 600px) {
   .box {
@@ -57,12 +69,12 @@ html, body {
   .todos {
     width: 100%;
   }
-  
+
   .addButton {
     margin-left: 0;
     margin-top: 10px;
   }
-  
+
   .todo {
     width: 100%;
   }

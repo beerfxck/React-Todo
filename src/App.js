@@ -48,7 +48,6 @@ function App() {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
-
   return (
     <div className="box">
       <div className="app">
