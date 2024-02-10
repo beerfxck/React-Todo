@@ -64,15 +64,17 @@ function App() {
             Add
           </button>
         </div>
-        <div className="todos">
-          {todos.map((todo) => (
-            <Todo
-              key={todo.id}
-              todo={todo}
-              onToggleComplete={handleToggleComplete}
-              onRemoveTodo={handleRemoveTodo}
-            />
-          ))}
+        <div className="todos-container">
+          <div className="todos">
+            {todos.map((todo) => (
+              <Todo
+                key={todo.id}
+                todo={todo}
+                onToggleComplete={handleToggleComplete}
+                onRemoveTodo={handleRemoveTodo}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

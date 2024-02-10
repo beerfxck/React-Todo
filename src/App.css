@@ -20,7 +20,16 @@ body {
   border-radius: 8px;
   width: 600px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+
+
 }
+
+.todos-container {
+  max-height: 250px; 
+  overflow-y: auto;
+  margin-top: 10px; 
+}
+
 .box {
   display: flex;
   justify-content: center;
