@@ -8,8 +8,8 @@
   border: 1px solid black;
   display: flex;
   align-items: center;
-  width: 450px;
-  height: 30px;
+  width: 470px;
+  height: 40px;
 }
 
 .completed {
@@ -27,6 +27,7 @@
 
 .remove-button {
   margin-left: 5px;
+  margin-right: 5px;
   padding: 5px;
   cursor: pointer;
 }

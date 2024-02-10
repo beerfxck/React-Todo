@@ -26,7 +26,7 @@ function App() {
         id: uuidv4(),
         text: inputText,
         completed: false,
-        updatedAt: new Date ().toLocaleString(),
+        updatedAt: new Date().toLocaleString(),
       };
 
       setTodos([newTodo, ...todos]);
@@ -51,30 +51,31 @@ function App() {
 
   return (
     <div className="box">
-    <div className="app">
-      <h1>To-do List</h1>
-      <div className="add-todo">
-        <input
-          type="text"
-          placeholder="Type something..."
-          value={inputText}
-          onChange={handleInputChange}
-        />
-        <button className="addButton" onClick={handleAddTodo}>
-          Add
-        </button>
-      </div>
-      <div className="todos">
-        {todos.map((todo) => (
-          <Todo
-            key={todo.id}
-            todo={todo}
-            onToggleComplete={handleToggleComplete}
-            onRemoveTodo={handleRemoveTodo}
+      <div className="app">
+        <h1>To-do List</h1>
+        <div className="add-todo">
+          <input
+            className="input"
+            type="text"
+            placeholder="Type something..."
+            value={inputText}
+            onChange={handleInputChange}
           />
-        ))}
+          <button className="addButton" onClick={handleAddTodo}>
+            Add
+          </button>
+        </div>
+        <div className="todos">
+          {todos.map((todo) => (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onToggleComplete={handleToggleComplete}
+              onRemoveTodo={handleRemoveTodo}
+            />
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
