@@ -32,3 +32,27 @@
   padding: 5px;
   cursor: pointer;
 }
+
+.todo-box.grid-view {
+  margin: 0;
+}
+
+.todo.grid-view {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 300px; 
+  height: 170px; 
+}
+
+.info {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+

@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Todo from "./component/Todo";
-import { v4 as uuidv4 } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList, faTh } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
 function App() {
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
+  const [isGridView, setIsGridView] = useState(false);
+  const idCounter = useRef(1);
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -23,7 +26,7 @@ function App() {
   const handleAddTodo = () => {
     if (inputText.trim() !== "") {
       const newTodo = {
-        id: uuidv4(),
+        id: idCounter.current++,
         text: inputText,
         completed: false,
         updatedAt: new Date().toLocaleString(),
@@ -48,6 +51,10 @@ function App() {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
+  const handleToggleView = () => {
+    setIsGridView(!isGridView);
+  };
+
   return (
     <div className="box">
       <div className="app">
@@ -63,15 +70,23 @@ function App() {
           <button className="addButton" onClick={handleAddTodo}>
             Add
           </button>
+          <button className="toggleButton" onClick={handleToggleView}>
+            {isGridView ? (
+              <FontAwesomeIcon icon={faList} />
+            ) : (
+              <FontAwesomeIcon icon={faTh} />
+            )}
+          </button>
         </div>
-        <div className="todos-container">
-          <div className="todos">
+        <div className={`todos-container ${isGridView ? "grid-view" : ""}`}>
+          <div className={isGridView ? "todos-grid" : "todos"}>
             {todos.map((todo) => (
               <Todo
                 key={todo.id}
                 todo={todo}
                 onToggleComplete={handleToggleComplete}
                 onRemoveTodo={handleRemoveTodo}
+                isGridView={isGridView}
               />
             ))}
           </div>
