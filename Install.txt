@@ -1,0 +1,28 @@
+*** เมื่อโคลนโปรเจคไปแล้วรบกวน npm install ก่อนรันโปรเจคด้วยครับ ***
+จากนั้น npm start ได้เลยครับ
+
+- รายละเอียดงานที่ทำ
+
+create To-do component
+  •checkbox for to-do
+  •show the to-do text that user submitted
+  •show the updatedAt timestamp
+  •show Remove to-do button
+handle actions using state from React in the web app
+  •add a to-do (fill in the input and submit with clicking Add button)
+  •checkbox for complete a to-do (can toggle from checked to unchecked)
+  •remove a to-do
+sorting to-dos
+  •recently added to-do shows on the top of the stack
+  •completed to-do goes to the bottom of the stack (oldest is in the end of the stack)
+
+สิ่งที่เพิ่มจากหัวข้อ Bonus points
+
+  •toggle view mode between stack view and grid view
+  •confirmation dialog before you delete to-do 
+  •warning dialog when user doesn't fill text in to the input box 
+   and try to click "Add" button
+  •Store in database (LocalStorage)
+
+how to check localStorage 
+right click -> inspect -> Application(Top right) -> Local storage
