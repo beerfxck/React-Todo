@@ -5,12 +5,12 @@ import "./Todo.css";
 const Todo = ({ todo, onToggleComplete, onRemoveTodo, isGridView }) => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleToggleComplete = () => {
+  const ToggleComplete = () => {
     setIsChecked(!isChecked);
     onToggleComplete(todo.id);
   };
 
-  const handleRemoveTodo = () => {
+  const RemoveTodo = () => {
     const shouldDelete = window.confirm("ต้องการลบหรือไม่ ?");
 
     if (shouldDelete) {
@@ -25,12 +25,12 @@ const Todo = ({ todo, onToggleComplete, onRemoveTodo, isGridView }) => {
           <input
             type="checkbox"
             checked={isChecked}
-            onChange={handleToggleComplete}
+            onChange={ToggleComplete}
           />
           <span className="todo-text">{todo.text}</span>
           <div className="info">
             <span className="todo-updatedAt">{todo.updatedAt}</span>
-            <button className="remove-button" onClick={handleRemoveTodo}>
+            <button className="remove-button" onClick={RemoveTodo}>
               <ImBin style={{ color: "red" }} />
             </button>
           </div>
@@ -40,11 +40,11 @@ const Todo = ({ todo, onToggleComplete, onRemoveTodo, isGridView }) => {
           <input
             type="checkbox"
             checked={isChecked}
-            onChange={handleToggleComplete}
+            onChange={ToggleComplete}
           />
           <span className="todo-text">{todo.text}</span>
           <span className="todo-updatedAt">{todo.updatedAt}</span>
-          <button className="remove-button" onClick={handleRemoveTodo}>
+          <button className="remove-button" onClick={RemoveTodo}>
             <ImBin style={{ color: "red" }} />
           </button>
         </div>

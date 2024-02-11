@@ -19,11 +19,11 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const handleInputChange = (e) => {
+  const InputChange = (e) => {
     setInputText(e.target.value);
   };
 
-  const handleAddTodo = () => {
+  const AddTodo = () => {
     if (inputText.trim() !== "") {
       const newTodo = {
         id: idCounter.current++,
@@ -39,7 +39,7 @@ function App() {
     }
   };
 
-  const handleToggleComplete = (id) => {
+  const ToggleComplete = (id) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -47,7 +47,7 @@ function App() {
     );
   };
 
-  const handleRemoveTodo = (id) => {
+  const RemoveTodo = (id) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
@@ -65,9 +65,9 @@ function App() {
             type="text"
             placeholder="Type something..."
             value={inputText}
-            onChange={handleInputChange}
+            onChange={InputChange}
           />
-          <button className="addButton" onClick={handleAddTodo}>
+          <button className="addButton" onClick={AddTodo}>
             Add
           </button>
           <button className="toggleButton" onClick={handleToggleView}>
@@ -84,8 +84,8 @@ function App() {
               <Todo
                 key={todo.id}
                 todo={todo}
-                onToggleComplete={handleToggleComplete}
-                onRemoveTodo={handleRemoveTodo}
+                onToggleComplete={ToggleComplete}
+                onRemoveTodo={RemoveTodo}
                 isGridView={isGridView}
               />
             ))}
